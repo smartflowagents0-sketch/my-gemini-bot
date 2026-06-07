@@ -1,7 +1,7 @@
 // api/chat.js — Vercel Serverless Function
 // Deploy this file under /api/chat.js in your Vercel project root.
-
-import knowledge from '../knowledge.json' assert { type: 'json' };
+import fs from 'fs';
+const knowledge = JSON.parse(fs.readFileSync('./knowledge.json', 'utf8'));
 
 // ─── Build the system prompt from knowledge.json ───────────────────────────
 function buildSystemPrompt(kb) {
