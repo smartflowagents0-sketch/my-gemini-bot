@@ -1,4 +1,4 @@
-import { knowledge } from './knowledge.js';
+import { knowledge } from '../knowledge.js';
 
 // ─── Build the system prompt from knowledge.json ───────────────────────────
 function buildSystemPrompt(kb) {
