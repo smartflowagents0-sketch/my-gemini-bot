@@ -1,6 +1,6 @@
-import fs from 'fs';
-
-const knowledge = JSON.parse(fs.readFileSync(new URL('./knowledge.json', import.meta.url), 'utf8'));
+import { createRequire } from 'module';
+const require = createRequire(import.meta.url);
+const knowledge = require('./knowledge.json');s
 
 const knowledgePath = path.join(process.cwd(), 'knowledge.json');
 const knowledge = JSON.parse(fs.readFileSync(knowledgePath, 'utf8'));
