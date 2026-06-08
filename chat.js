@@ -1,4 +1,12 @@
-import { knowledge } from './knowledge.js';
+import fs from 'fs';
+import path from 'path';
+
+// قراءة ملف البيانات بأمان وضمان التوافق الكامل مع سيرفر Vercel
+const knowledge = JSON.parse(
+  fs.readFileSync(path.join(process.cwd(), 'knowledge.json'), 'utf8')
+);
+
+// —— Build the system prompt from knowledge.json ———————————————————————
 
 // —— Build the system prompt from knowledge.json ———————————————————————
 function buildSystemPrompt(kb) {
