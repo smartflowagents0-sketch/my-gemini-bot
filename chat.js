@@ -90,7 +90,34 @@ export default async function handler(req, res) {
 
   // ── Validate input ────────────────────────────────────────────────────
   // قراءة البيانات بأمان سواء وصلت كـ ملف JSON جاهز أو كنص عادي
+// قراءة البيانات بأمان سواء وصلت كـ JSON أو كنص عادي
+// قراءة البيانات بأمان سواء وصلت كـ JSON أو كنص عادي
+// قراءة البيانات بأمان سواء وصلت كـ JSON أو كنص عادي
   let data = req.body;
+  if (typeof data === 'string') {
+    try {
+      data = JSON.parse(data);
+    } catch (e) {
+      return res.status(400).json({ error: 'Invalid JSON format' });
+    }
+  }
+  const messages = data?.messages;
+  if (typeof data === 'string') {
+    try {
+      data = JSON.parse(data);
+    } catch (e) {
+      return res.status(400).json({ error: 'Invalid JSON format' });
+    }
+  }
+  const messages = data?.messages;
+  if (typeof data === 'string') {
+    try {
+      data = JSON.parse(data);
+    } catch (e) {
+      return res.status(400).json({ error: 'Invalid JSON format' });
+    }
+  }
+  const messages = data?.messages;
   if (typeof data === 'string') {
     try {
       data = JSON.parse(data);
