@@ -1,8 +1,5 @@
 import { knowledge } from './knowledge.js';
 
-const knowledgePath = path.join(process.cwd(), 'knowledge.json');
-const knowledge = JSON.parse(fs.readFileSync(knowledgePath, 'utf8'));
-
 // ─── Build the system prompt from knowledge.json ───────────────────────────
 function buildSystemPrompt(kb) {
   const meta = kb._meta;
