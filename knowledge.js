@@ -1,3 +1,6 @@
+export const knowledge = {
+  "بياناتك القديمة": "هنا بالكامل دون أي تغيير في محتواها..."
+};
 {
   "_meta": {
     "business_name": "Acme Web Solutions",
