@@ -1,6 +1,8 @@
-import { knowledge } from '../knowledge.js';
+import fs from 'fs';
 
-// ─── Build the system prompt from knowledge.json ───────────────────────────
+const knowledge = JSON.parse(fs.readFileSync(new URL('./knowledge.json', import.meta.url), 'utf8'));
+
+// ——— Build the system prompt from knowledge.json ———
 function buildSystemPrompt(kb) {
   const meta = kb._meta;
 
