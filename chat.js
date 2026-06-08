@@ -89,7 +89,16 @@ export default async function handler(req, res) {
   }
 
   // ── Validate input ────────────────────────────────────────────────────
-  const { messages } = req.body;
+  // قراءة البيانات بأمان سواء وصلت كـ ملف JSON جاهز أو كنص عادي
+  let data = req.body;
+  if (typeof data === 'string') {
+    try {
+      data = JSON.parse(data);
+    } catch (e) {
+      return res.status(400).json({ error: 'Invalid JSON string' });
+    }
+  }
+  const messages = data?.messages;
 
   if (!messages || !Array.isArray(messages) || messages.length === 0) {
     return res.status(400).json({ error: 'Invalid request: messages array required.' });
