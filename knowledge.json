@@ -1,0 +1,13 @@
+{
+  "_meta": {
+    "business_name": "اسم مشروعك هنا",
+    "business_type": "نوع العمل",
+    "language": "ar"
+  },
+  "qa_pairs": [
+    {
+      "question": "سؤال تجريبي؟",
+      "answer": "جواب تجريبي."
+    }
+  ]
+}
